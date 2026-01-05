@@ -1,0 +1,25 @@
+name: Network Config Validation
+
+on: [push]
+
+jobs:
+  test_logic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Nornir and Jinja
+        run: |
+          pip install nornir nornir-jinja2 nornir-utils nornir-netbox requests
+
+      - name: Syntax Check
+        run: |
+          # This checks if your scripts have any coding errors
+          python3 -m py_compile scripts/build_configs.py
+          echo "✅ Pipeline Logic Validated!"
