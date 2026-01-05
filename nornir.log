@@ -1,0 +1,31 @@
+2026-01-05 06:00:54,118 -  nornir.core -     INFO -        run() - Running task 'generate_configs' with args {} on 1 hosts
+2026-01-05 06:00:54,212 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper_ex.j2", line 7, in top-level template code
+    {% for interface in host.interfaces %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interfaces'
+
+2026-01-05 06:00:54,214 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'generate_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/build_configs.py", line 7, in generate_configs
+    result = task.run(
+             ^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+

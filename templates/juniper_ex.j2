@@ -1,0 +1,22 @@
+system {
+    host-name {{ host.name }};
+}
+
+interfaces {
+    {# Loop through the interfaces provided by NetBox #}
+    {% for interface in host.interfaces %}
+    {{ interface.name }} {
+        {% if interface.description %}
+        description "{{ interface.description }}";
+        {% endif %}
+        unit 0 {
+            family inet {
+                {% if interface.ip_addresses %}
+                {# Grabs the first IP assigned to this interface #}
+                address {{ interface.ip_addresses[0] }};
+                {% endif %}
+            }
+        }
+    }
+    {% endfor %}
+}
