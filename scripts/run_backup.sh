@@ -1,29 +1,19 @@
 #!/bin/bash
 
-# 1. Get the directory where THIS script is located
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-# 2. Navigate to the root of the project (one level up from /scripts)
-cd "$SCRIPT_DIR/.."
+# 1. FORCE the script to go to the permanent Docker volume we created
+PROJECT_ROOT="/opt/netbox/netbox/scripts/automation"
+cd "$PROJECT_ROOT"
 
 echo "--- Starting NetDevOps Backup Pipeline ---"
-echo "Current Directory: $(pwd)"
+echo "Current Working Directory: $(pwd)"
 
-# 3. Check if we are inside the Docker container or on the Host
-if [ -f "/opt/netbox/venv/bin/python3" ]; then
-    echo "Running inside NetBox Docker container..."
-    # If you successfully ran the pip install command earlier:
-    /opt/netbox/venv/bin/python3 scripts/build_configs.py
+# 2. Use the virtual environment inside THAT folder
+if [ -f "./venv/bin/python3" ]; then
+    echo "Using project virtual environment..."
+    ./venv/bin/python3 scripts/build_configs.py
 else
-    echo "Running on Host machine..."
-    # Path to your local virtual environment on the act-nms-dev server
-    source venv/bin/activate
-    python3 scripts/build_configs.py
+    echo "ERROR: Virtual environment not found in $PROJECT_ROOT/venv"
+    exit 1
 fi
-
-# 4. Optional: Handle Git pushes if needed (usually handled by the python script)
-# git add .
-# git commit -m "Automated backup from NetBox"
-# git push origin main
 
 echo "--- Pipeline Execution Finished ---"
