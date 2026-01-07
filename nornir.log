@@ -60,3 +60,796 @@ Traceback (most recent call last):
 nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
 
 
+2026-01-22 04:53:28,585 -  nornir.core -     INFO -        run() - Running task 'generate_configs' with args {} on 3 hosts
+2026-01-22 04:53:28,619 - nornir.core.task -    ERROR -      start() - Host 'Huaweis5700': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper_ex.j2", line 7, in top-level template code
+    {% for interface in host.interfaces %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interfaces'
+
+2026-01-22 04:53:28,620 - nornir.core.task -    ERROR -      start() - Host 'Huaweis6720': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper_ex.j2", line 7, in top-level template code
+    {% for interface in host.interfaces %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interfaces'
+
+2026-01-22 04:53:28,621 - nornir.core.task -    ERROR -      start() - Host 'Huaweis5700': task 'generate_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/scripts/build_configs.py", line 7, in generate_configs
+    result = task.run(
+             ^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2026-01-22 04:53:28,621 - nornir.core.task -    ERROR -      start() - Host 'Huaweis6720': task 'generate_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/scripts/build_configs.py", line 7, in generate_configs
+    result = task.run(
+             ^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2026-01-22 04:53:28,624 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper_ex.j2", line 7, in top-level template code
+    {% for interface in host.interfaces %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interfaces'
+
+2026-01-22 04:53:28,625 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'generate_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/scripts/build_configs.py", line 7, in generate_configs
+    result = task.run(
+             ^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2026-01-29 12:15:52,017 -  nornir.core -     INFO -        run() - Running task 'generate_configs' with args {} on 3 hosts
+2026-01-29 12:15:52,084 - nornir.core.task -    ERROR -      start() - Host 'Huaweis6720': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper_ex.j2", line 7, in top-level template code
+    {% for interface in host.interfaces %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interfaces'
+
+2026-01-29 12:15:52,087 - nornir.core.task -    ERROR -      start() - Host 'Huaweis5700': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper_ex.j2", line 7, in top-level template code
+    {% for interface in host.interfaces %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interfaces'
+
+2026-01-29 12:15:52,090 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper_ex.j2", line 7, in top-level template code
+    {% for interface in host.interfaces %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interfaces'
+
+2026-01-29 12:15:52,094 - nornir.core.task -    ERROR -      start() - Host 'Huaweis6720': task 'generate_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/scripts/build_configs.py", line 7, in generate_configs
+    result = task.run(
+             ^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2026-01-29 12:15:52,095 - nornir.core.task -    ERROR -      start() - Host 'Huaweis5700': task 'generate_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/scripts/build_configs.py", line 7, in generate_configs
+    result = task.run(
+             ^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2026-01-29 12:15:52,097 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'generate_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/scripts/build_configs.py", line 7, in generate_configs
+    result = task.run(
+             ^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2026-02-02 12:21:24,693 -  nornir.core -     INFO -        run() - Running task 'generate_configs' with args {} on 3 hosts
+2026-02-02 12:21:24,726 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper_ex.j2", line 7, in top-level template code
+    {% for interface in host.interfaces %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interfaces'
+
+2026-02-02 12:21:24,729 - nornir.core.task -    ERROR -      start() - Host 'Huaweis6720': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper_ex.j2", line 7, in top-level template code
+    {% for interface in host.interfaces %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interfaces'
+
+2026-02-02 12:21:24,730 - nornir.core.task -    ERROR -      start() - Host 'Huaweis5700': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper_ex.j2", line 7, in top-level template code
+    {% for interface in host.interfaces %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interfaces'
+
+2026-02-02 12:21:24,732 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'generate_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/scripts/build_configs.py", line 7, in generate_configs
+    result = task.run(
+             ^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2026-02-02 12:21:24,733 - nornir.core.task -    ERROR -      start() - Host 'Huaweis5700': task 'generate_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/scripts/build_configs.py", line 7, in generate_configs
+    result = task.run(
+             ^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2026-02-02 12:21:24,734 - nornir.core.task -    ERROR -      start() - Host 'Huaweis6720': task 'generate_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/scripts/build_configs.py", line 7, in generate_configs
+    result = task.run(
+             ^^^^^^^^^
+  File "/opt/netbox/netbox/scripts/automation/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2026-02-04 06:45:58,980 -  nornir.core -     INFO -        run() - Running task 'configure_network' with args {} on 3 hosts
+2026-02-04 06:45:59,616 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 475, in get_connection
+    conn = self.get_connection_parameters(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 411, in get_connection_parameters
+    r = self._get_connection_options_recursively(connection)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 440, in _get_connection_options_recursively
+    p.hostname = p.hostname if p.hostname is not None else sp.hostname
+                               ^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'hostname'
+
+2026-02-04 06:45:59,619 - nornir.core.task -    ERROR -      start() - Host 'Huaweis6720': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 475, in get_connection
+    conn = self.get_connection_parameters(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 411, in get_connection_parameters
+    r = self._get_connection_options_recursively(connection)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 440, in _get_connection_options_recursively
+    p.hostname = p.hostname if p.hostname is not None else sp.hostname
+                               ^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'hostname'
+
+2026-02-04 06:45:59,625 - nornir.core.task -    ERROR -      start() - Host 'Huaweis5700': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 475, in get_connection
+    conn = self.get_connection_parameters(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 411, in get_connection_parameters
+    r = self._get_connection_options_recursively(connection)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 440, in _get_connection_options_recursively
+    p.hostname = p.hostname if p.hostname is not None else sp.hostname
+                               ^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'hostname'
+
+2026-02-04 06:45:59,628 - nornir.core.task -    ERROR -      start() - Host 'Huaweis6720': task 'configure_network' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/deploy_configs.py", line 33, in configure_network
+    task.run(task=netmiko_send_config, config_commands=config_cmds)
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2026-02-04 06:45:59,629 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'configure_network' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/deploy_configs.py", line 33, in configure_network
+    task.run(task=netmiko_send_config, config_commands=config_cmds)
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2026-02-04 06:45:59,630 - nornir.core.task -    ERROR -      start() - Host 'Huaweis5700': task 'configure_network' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/deploy_configs.py", line 33, in configure_network
+    task.run(task=netmiko_send_config, config_commands=config_cmds)
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2026-02-04 06:50:28,028 -  nornir.core -     INFO -        run() - Running task 'configure_network' with args {} on 3 hosts
+2026-02-04 06:50:28,036 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'configure_network' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/deploy_configs.py", line 7, in configure_network
+    if "huawei" in task.host.platform.lower():
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+
+2026-02-04 06:50:28,039 - nornir.core.task -    ERROR -      start() - Host 'Huaweis6720': task 'configure_network' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/deploy_configs.py", line 7, in configure_network
+    if "huawei" in task.host.platform.lower():
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+
+2026-02-04 06:50:28,041 - nornir.core.task -    ERROR -      start() - Host 'Huaweis5700': task 'configure_network' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/deploy_configs.py", line 7, in configure_network
+    if "huawei" in task.host.platform.lower():
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+
+2026-02-04 06:56:08,168 -  nornir.core -     INFO -        run() - Running task 'configure_network' with args {} on 3 hosts
+2026-02-04 06:56:18,928 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/paramiko/client.py", line 384, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: juniper_junos 192.168.1.10:22
+
+
+
+2026-02-04 06:56:18,931 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'configure_network' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/deploy_configs.py", line 28, in configure_network
+    task.run(task=netmiko_send_config, config_commands=config_cmds)
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2026-02-04 06:56:30,821 - nornir.core.task -    ERROR -      start() - Host 'Huaweis6720': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 501, in _open
+    self._try_session_preparation()
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 997, in _try_session_preparation
+    self.session_preparation()
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/juniper/juniper.py", line 24, in session_preparation
+    self.set_terminal_width(command=cmd, pattern=r"Screen width set to")
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1364, in set_terminal_width
+    output = self.read_until_pattern(pattern=pattern)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 755, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'Screen width set to' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2026-02-04 06:56:30,822 - nornir.core.task -    ERROR -      start() - Host 'Huaweis6720': task 'configure_network' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/deploy_configs.py", line 28, in configure_network
+    task.run(task=netmiko_send_config, config_commands=config_cmds)
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2026-02-04 06:56:31,954 - nornir.core.task -    ERROR -      start() - Host 'Huaweis5700': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 501, in _open
+    self._try_session_preparation()
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 997, in _try_session_preparation
+    self.session_preparation()
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/juniper/juniper.py", line 24, in session_preparation
+    self.set_terminal_width(command=cmd, pattern=r"Screen width set to")
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1364, in set_terminal_width
+    output = self.read_until_pattern(pattern=pattern)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 755, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'Screen width set to' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2026-02-04 06:56:31,955 - nornir.core.task -    ERROR -      start() - Host 'Huaweis5700': task 'configure_network' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/deploy_configs.py", line 28, in configure_network
+    task.run(task=netmiko_send_config, config_commands=config_cmds)
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2026-02-04 07:03:45,818 -  nornir.core -     INFO -        run() - Running task 'configure_network' with args {} on 3 hosts
+2026-02-04 07:03:45,839 - nornir.core.task -    ERROR -      start() - Host 'Huaweis6720': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseConnection.__init__() got an unexpected keyword argument 'read_timeout'
+
+2026-02-04 07:03:45,842 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseConnection.__init__() got an unexpected keyword argument 'read_timeout'
+
+2026-02-04 07:03:45,844 - nornir.core.task -    ERROR -      start() - Host 'Huaweis5700': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseConnection.__init__() got an unexpected keyword argument 'read_timeout'
+
+2026-02-04 07:03:45,848 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'configure_network' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/deploy_configs.py", line 29, in configure_network
+    task.run(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2026-02-04 07:03:45,850 - nornir.core.task -    ERROR -      start() - Host 'Huaweis5700': task 'configure_network' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/deploy_configs.py", line 29, in configure_network
+    task.run(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2026-02-04 07:03:45,851 - nornir.core.task -    ERROR -      start() - Host 'Huaweis6720': task 'configure_network' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/deploy_configs.py", line 29, in configure_network
+    task.run(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2026-02-04 07:16:05,348 -  nornir.core -     INFO -        run() - Running task 'configure_network' with args {} on 4 hosts
+2026-02-04 07:16:05,367 - nornir.core.task -    ERROR -      start() - Host 'Huaweis6720': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseConnection.__init__() got an unexpected keyword argument 'read_timeout'
+
+2026-02-04 07:16:05,369 - nornir.core.task -    ERROR -      start() - Host 'Huaweis5700': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseConnection.__init__() got an unexpected keyword argument 'read_timeout'
+
+2026-02-04 07:16:05,371 - nornir.core.task -    ERROR -      start() - Host 'Huaweis6720': task 'configure_network' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/deploy_configs.py", line 29, in configure_network
+    task.run(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2026-02-04 07:16:05,373 - nornir.core.task -    ERROR -      start() - Host 'Huawei_T': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseConnection.__init__() got an unexpected keyword argument 'read_timeout'
+
+2026-02-04 07:16:05,375 - nornir.core.task -    ERROR -      start() - Host 'Huaweis5700': task 'configure_network' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/deploy_configs.py", line 29, in configure_network
+    task.run(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2026-02-04 07:16:05,377 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseConnection.__init__() got an unexpected keyword argument 'read_timeout'
+
+2026-02-04 07:16:05,379 - nornir.core.task -    ERROR -      start() - Host 'Huawei_T': task 'configure_network' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/deploy_configs.py", line 29, in configure_network
+    task.run(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2026-02-04 07:16:05,380 - nornir.core.task -    ERROR -      start() - Host 'GICEB-SW1': task 'configure_network' failed with traceback:
+Traceback (most recent call last):
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/projects/ACT-Netdevops/scripts/deploy_configs.py", line 29, in configure_network
+    task.run(
+  File "/root/projects/ACT-Netdevops/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
