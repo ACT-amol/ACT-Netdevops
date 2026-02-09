@@ -5,3 +5,7 @@ inventory:
     nb_url: "http://10.100.100.140:8000"
     nb_token: "df74ef190b2898264949c400a3589460b18d70fa"
     ssl_verify: false
+runner:
+  plugin: threaded
+  options:
+    num_workers: 10
