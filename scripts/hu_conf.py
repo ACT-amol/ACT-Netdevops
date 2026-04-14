@@ -1,57 +1,74 @@
-from extras.scripts import Script, ObjectVar, TextVar, PasswordVar
+from extras.scripts import Script, ObjectVar, TextVar, PasswordVar, BooleanVar
 from dcim.models import Device
+import datetime
+
+# --- ERROR PREVENTION BLOCK ---
 try:
     from netmiko import ConnectHandler
-    NETMIKO_READY = True
+    NETMIKO_LOADED = True
 except ImportError:
-    NETMIKO_READY = False
+    NETMIKO_LOADED = False
 
-class HuaweiConfigScript(Script):
-    # Instead of typing an IP, you select a device from your NetBox list
+class HuaweiManagementScript(Script):
     device = ObjectVar(
-        description="Select the Huawei switch to configure",
-        queryset=Device.objects.filter(device_type__manufacturer__name="Huawei")
+        description="Select the Huawei switch",
+        queryset=Device.objects.filter(device_type__manufacturer__name__icontains="Huawei")
     )
     username = StringVar(label="SSH Username", default="venkatasatya.teja")
     password = PasswordVar(label="SSH Password", default="Login@999")
-    commands = TextVar(label="Configuration Commands")
+    
+    do_backup = BooleanVar(label="Run Backup", default=True, description="Capture 'display current-configuration'")
+    commands = TextVar(label="Push Config Commands", required=False, description="Enter commands to push (one per line)")
 
     class Meta:
-        name = "Huawei Configuration Tool (Auto-IP)"
-        description = "Pulls IP automatically from NetBox device records"
+        name = "Huawei Backup & Config Tool"
+        description = "Safe tool for Huawei S6720/S6730 Management"
 
     def run(self, data, commit):
-        if not NETMIKO_READY:
-            self.log_failure("Netmiko not installed in worker container.")
+        # Check 1: Library Check
+        if not NETMIKO_LOADED:
+            self.log_failure("CRITICAL: 'netmiko' library not found in NetBox container. Run 'pip install netmiko' in the worker.")
             return
 
-        # Get the IP address from the device object you selected in the UI
         target_device = data['device']
+        
+        # Check 2: IP Check
         if not target_device.primary_ip:
-            self.log_failure(f"Device {target_device.name} has no Primary IP assigned in NetBox!")
+            self.log_failure(f"Device {target_device.name} has no Primary IP in NetBox.")
             return
-            
-        # Clean the IP (removes the /mask like /24)
-        ip_address = str(target_device.primary_ip.address.ip)
+        
+        ip_addr = str(target_device.primary_ip.address.ip)
 
-        huawei_device = {
+        conn_params = {
             'device_type': 'huawei',
-            'host': ip_address,
+            'host': ip_addr,
             'username': data['username'],
             'password': data['password'],
-            'port': 22,
-            'conn_timeout': 15,
+            'conn_timeout': 20,
         }
 
-        self.log_info(f"Connecting to {target_device.name} at {ip_address}...")
-        
         try:
-            with ConnectHandler(**huawei_device) as net_connect:
-                self.log_success(f"Connected to {target_device.name}")
-                output = net_connect.send_config_set(data['commands'].strip().splitlines())
-                self.log_info(output)
-                self.log_success("Done.")
-        except Exception as e:
-            self.log_failure(f"Failed: {str(e)}")
+            self.log_info(f"Connecting to {target_device.name} ({ip_addr})...")
+            with ConnectHandler(**conn_params) as net_connect:
+                self.log_success("Connected.")
 
-        return "Finished"
+                # PHASE 1: BACKUP
+                if data['do_backup']:
+                    self.log_info("Running Backup...")
+                    backup_output = net_connect.send_command("display current-configuration")
+                    # You can see the backup in the script log
+                    self.log_debug(f"BACKUP CONTENT:\n{backup_output}")
+                    self.log_success("Backup captured successfully.")
+
+                # PHASE 2: CONFIGURATION
+                if data['commands']:
+                    cmd_list = data['commands'].strip().splitlines()
+                    self.log_info(f"Pushing {len(cmd_list)} commands...")
+                    config_output = net_connect.send_config_set(cmd_list)
+                    self.log_info(f"DEVICE OUTPUT:\n{config_output}")
+                    self.log_success("Configuration push complete.")
+
+        except Exception as e:
+            self.log_failure(f"Operation Failed: {str(e)}")
+
+        return "Process Finished"
